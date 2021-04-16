@@ -1,5 +1,3 @@
-
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -295,7 +293,7 @@ img {
   width: 71.01%;
   padding-top: 40px;
   padding-bottom: 40px;
-  max-width: 1440px;
+  max-width: 1366px;
 }
 
 .main-block::before,
@@ -434,23 +432,15 @@ img {
   z-index: 1;
 }
 
-
-/* advantages*/
-.advantages__header-wraper{
-  text-align: center;
-  display: flex;
-  justify-content: space-between;
-}
-
 .advantages__wrapper {
   max-width: 1440px;
   margin: 0 auto;
-  padding-top: 170px;
 }
 
-.advantages__article__header a {
-  color: #2f5da1;
-  text-decoration: none;
+.advantages__header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 170px;
 }
 
 .advantages__list {
@@ -458,23 +448,32 @@ img {
   list-style: none;
   padding: 0;
 }
-.advantages__list__item {
+
+.advantages__item {
   flex-grow: 1;
   flex-basis: 0;
 }
-.advantages__list__item:not(:last-child) {
+
+.advantages__item:not(:last-child) {
   margin-right: 30px;
 }
+
 .advantages__article {
   text-align: center;
 }
 
-.advantages__article img {
-	border-radius: 12px;
- 	width: 200px;
- 	height: 200px;
- 	object-fit: cover;
+.advantages__article-header a {
+  color: #2f5da1;
+  text-decoration: none;
 }
+
+.advantages__article img {
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
 .our-groups {
   margin-top: -5px;
   background-image: url("../img/background-our-groups-desktop.svg");
@@ -532,14 +531,14 @@ img {
 }
 
 .our-groups__list {
-	justify-content: space-around;
- 	width: 100%;
- 	display: flex;
- 	flex-wrap: wrap;
- 	list-style: none;
- 	padding-left: 0;
- 	margin-top: 52px;
- 	margin-bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 52px;
+  margin-bottom: 0;
 }
 
 .our-groups__item {
@@ -557,46 +556,9 @@ img {
   perspective: 1000px;
 }
 
-.our-groups__item:hover .our-groups__article {
-  transform: rotateY(180deg);
-}
-
-.our-groups__article-back, .our-groups__article-front {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.our-groups__article-front {
-  background-color: #bbb;
-  color: black;
-}
-
-.our-groups__article-back {
-  background-color: #2980b9;
-  color: white;
-  transform: rotateY(180deg);
-}
-
-.our-groups__item, .our-groups__article {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
+.our-groups__item:hover
 .our-groups__article {
-  background-color: blue;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transform: rotateY(180deg);
 }
 
 .our-groups__item:nth-of-type(3n) {
@@ -609,6 +571,36 @@ img {
 
 .our-groups__item--blue {
   border-color: #5879E8;
+}
+
+.our-groups__article {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.our-groups__article-front,
+.our-groups__article-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.our-groups__article-back a {
+	display: flex;
+	justify-content: center;
+
+}
+
+.our-groups__article-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
 }
 
 .our-groups__article-header {
@@ -749,7 +741,7 @@ img {
   margin-left: auto;
   margin-right: auto;
   padding-top: 90px;
-  max-width: 1440px;
+  max-width: 1366px;
 }
 
 .banner__header {
@@ -783,16 +775,19 @@ img {
   margin-right: auto;
 }
 
-@media (max-width: 1199px) {
+@media (min-width: 1199px) {
   .banner {
     min-height: 450px;
     margin-top: 93px;
   }
   .banner__background-desktop {
-    display: none;
+    display: block;
   }
   .banner__background-tablet {
-    display: block;
+    display: none;
+  }
+   .banner__background-mobile {
+    display: none;
   }
   .banner__wrapper {
     width: 88.28%;
@@ -931,8 +926,19 @@ img {
 
 /*стили для модалки */
 
+#ask-question {
+	z-index: 999;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
 .modal {
   display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
 
 .page__modal {
@@ -1321,4 +1327,3 @@ img {
 .footer a:active {
   opacity: 0.5;
 }
-
